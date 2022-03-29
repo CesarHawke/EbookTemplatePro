@@ -1,0 +1,567 @@
+<!DOCTYPE HTML>
+<html lang="en">
+
+<head>
+    <title>Ebook pro</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no" />
+    <meta name="description" content="description" />
+    <meta property="og:site_name" content="Ebook pro" />
+    <meta property="og:title" content="Ebook pro" />
+    <meta property="og:type" content="website" />
+    <meta property="og:description" content="description" />
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,400italic,300,300italic,900,900italic,800,800italic,700,700italic%7CRoboto:400,400italic,900,900italic,700,700italic%7CInter:400,400italic,700,700italic%7COpen+Sans:400,400italic,700,700italic" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="assets/main.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+
+    <script>
+        window.onload = function() {
+
+            $testimonial = $('#embed04');
+            $testimonialItem = $testimonial.find('.container');
+
+            $testimonial.addClass('testimonials');
+            $testimonialItem.addClass('testimonial');
+
+            $num = $testimonialItem.length;
+            $even = $num / 2;
+
+            $odd = ($num + 1) / 2;
+
+            if ($num % 2 == 0) {
+                $testimonial.find('.testimonial:nth-child(' + $even + ')').addClass('active');
+                $testimonial.find('.testimonial:nth-child(' + $even + ')').prev().addClass('prev');
+                $testimonial.find('.testimonial:nth-child(' + $even + ')').next().addClass('next');
+            } else {
+                $testimonial.find('.testimonial:nth-child(' + $odd + ')').addClass('active');
+                $testimonial.find('.testimonial:nth-child(' + $odd + ')').prev().addClass('prev');
+                $testimonial.find('.testimonial:nth-child(' + $odd + ')').next().addClass('next');
+            }
+
+            $testimonialItem.click(function() {
+                $slide = $testimonial.find('.active').width();
+
+                if ($(this).hasClass('next')) {
+                    $testimonial.stop(false, true).animate({
+                        left: '-=' + $slide
+                    }, 10000, "swing");
+                } else if ($(this).hasClass('prev')) {
+                    $testimonial.stop(false, true).animate({
+                        left: '+=' + $slide
+                    }, 10000, "swing");
+                }
+
+                $(this).removeClass('prev next');
+                $(this).siblings().removeClass('prev active next');
+
+                $(this).addClass('active');
+                $(this).prev().addClass('prev');
+                $(this).next().addClass('next');
+            });
+
+            // Keyboard nav
+            $('html body').keydown(function(e) {
+                if (e.keyCode == 37) { // left
+                    $testimonial.find('.active').prev().trigger('click');
+                } else if (e.keyCode == 39) { // right
+                    $testimonial.find('.active').next().trigger('click');
+                }
+            });
+
+        }
+
+    </script>
+    <style>
+        mark {
+            padding: 0.25rem;
+            border-radius: 0.25rem;
+        }
+
+        .testimonials {
+            display: flex;
+            align-content: center;
+            justify-content: center;
+            flex-wrap: nowrap;
+        }
+
+        .testimonials .wrapper {
+            max-width: 20rem;
+            width: auto !important;
+        }
+
+        .testimonial {
+            width: 50%;
+            height: 0;
+            width: 0;
+            margin: 0;
+            visibility: hidden;
+            opacity: 0;
+            position: relative;
+        }
+
+        .testimonial.active,
+        .testimonial.next,
+        .testimonial.prev {
+            height: auto;
+            max-height: 100%;
+            visibility: visible;
+            transition: 1s;
+            width: auto;
+        }
+
+        .testimonial.active {
+            opacity: 1;
+            transform: scale(1) translateY(0) translateX(0);
+        }
+
+        .testimonial.prev,
+        .testimonial.next {
+            cursor: pointer;
+            opacity: 0.4;
+            transform: scale(0.8) translateY(0.2rem) translateX(0);
+        }
+
+        .testimonial.prev:before,
+        .testimonial.next:before {
+            content: '';
+            cursor: pointer;
+            border-color: #49B970;
+            border-style: solid;
+            border-width: 0.25rem 0.25rem 0 0;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+            width: 2rem;
+            height: 2rem;
+            transform: rotate(-45deg);
+        }
+
+        .testimonial.prev:before {
+            transform: rotate(-135deg);
+            left: 1rem;
+        }
+
+        .testimonial.next:before {
+            transform: rotate(45deg);
+            right: 1rem;
+        }
+
+        .testimonial.prev:hover:before {
+            border-color: #1C9446;
+        }
+
+        .testimonial.next:hover:before {
+            border-color: #1C9446;
+        }
+
+        @media (max-width: 980px) {
+
+            .testimonial.prev,
+            .testimonial.next {
+                width: 4rem;
+                height: auto;
+            }
+
+            .testimonial.prev .wrapper,
+            .testimonial.next .wrapper {
+                display: none !important;
+            }
+
+            .testimonial.active .wrapper {
+                display: inline-block !important;
+            }
+
+            @media (max-width: 736px) {
+                .testimonial {}
+            }
+
+    </style>
+    <style>
+        table {
+            border-collapse: collapse;
+            border-spacing: 0;
+            width: 100%;
+            border: none;
+        }
+
+        th,
+        td {
+            text-align: left;
+            padding: 16px;
+        }
+
+        tr:nth-child(odd) {
+            background-color: #f2f2f2;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div id="wrapper">
+        <div id="main">
+            <div class="inner">
+                <div id="container02" class="container columns full screen">
+                    <div class="wrapper">
+                        <div class="inner">
+                            <div>
+                                <h1 id="text05">This book is out there now</h1>
+                                <h1 id="text08">Sign up and get a free chapter of the book including and an extra guide with design exercises.</h1>
+                                <form id="form02" method="post" action="#">
+                                    <div class="inner">
+                                        <div class="field">
+                                            <input type="email" name="email" id="form02-email" placeholder="Enter your best mail" maxlength="128" required />
+                                        </div>
+                                        <div class="actions">
+                                            <button type="submit">Get free sample</button>
+                                        </div>
+                                    </div>
+                                    <input type="hidden" name="id" value="form02" />
+                                </form>
+                                <p id="text38">Ready to buy? <a href="#packages">Buy now</a></p>
+                            </div>
+                            <div>
+                                <div id="image02" class="image" data-position="left">
+                                    <span class="frame"><img src="assets/images/image02.png" alt="" /></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="container13" class="container default full screen">
+                    <div class="wrapper">
+                        <div class="inner">
+                            <h3 id="text15">WHAT&#39;S INSIDE</h3>
+                            <h3 id="text16">This is what you&#39;ll get</h3>
+                        </div>
+                    </div>
+                </div>
+                <div id="container04" class="container columns full screen">
+                    <div class="wrapper">
+                        <div class="inner">
+                            <div>
+                                <ul id="icons05" class="style1 icons">
+                                    <li>
+                                        <i class="fa fa-envelope" style="font-size:48px;color:#49b970;"></i>
+
+                                    </li>
+                                </ul>
+                                <p id="text09"><span>Lorem ipsum dolor sit</span><br /><span>amet, consectetur</span><br /><span>adipiscing elit,</span><br /><span>sed do eiusmod</span></p>
+                            </div>
+                            <div>
+                                <ul id="icons06" class="style1 icons">
+                                    <li>
+                                        <i class="fa fa-comment" style="font-size:48px;color:#49b970;"></i>
+
+                                    </li>
+                                </ul>
+                                <p id="text01"><span>Lorem ipsum dolor sit</span><br /><span>amet, consectetur</span><br /><span>adipiscing elit,</span><br /><span>sed do eiusmod</span></p>
+                            </div>
+                            <div>
+                                <ul id="icons07" class="style1 icons">
+                                    <li>
+                                        <i class="fa  fa-map-marker" style="font-size:48px;color:#49b970;"></i>
+                                    </li>
+                                </ul>
+                                <p id="text11"><span>Lorem ipsum dolor sit</span><br /><span>amet, consectetur</span><br /><span>adipiscing elit,</span><br /><span>sed do eiusmod</span></p>
+                            </div>
+                            <div>
+                                <ul id="icons08" class="style1 icons">
+                                    <li>
+                                        <i class="fa   fa-star" style="font-size:48px;color:#49b970;"></i>
+
+                                    </li>
+                                </ul>
+                                <p id="text12"><span>Lorem ipsum dolor sit</span><br /><span>amet, consectetur</span><br /><span>adipiscing elit,</span><br /><span>sed do eiusmod</span></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="container01" class="container default full screen">
+                    <div class="wrapper">
+                        <div class="inner">
+                            <h3 id="text04">Testimonials</h3>
+                        </div>
+                    </div>
+                </div>
+                <div id="embed04">
+                    <div>
+                    </div>
+                    <div id="container15" class="style1 container default">
+                        <div class="wrapper">
+                            <div class="inner">
+                                <div id="image15" class="image">
+                                    <span class="frame"><img src="assets/images/image15.jpg" alt="" /></span>
+                                </div>
+                                <p id="text57">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod</p>
+                                <p id="text58"><span>John Doe</span><br /><span>NYC, USA</span><br /><span>⭐️⭐️⭐️⭐️⭐️</span></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="container16" class="style1 container default">
+                        <div class="wrapper">
+                            <div class="inner">
+                                <div id="image14" class="image">
+                                    <span class="frame"><img src="assets/images/image14.jpg" alt="" /></span>
+                                </div>
+                                <p id="text59">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod</p>
+                                <p id="text60"><span>Jane Doe</span><br /><span>NYC, USA</span><br /><span>⭐️⭐️⭐️⭐️⭐️</span></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="container08" class="style1 container default">
+                        <div class="wrapper">
+                            <div class="inner">
+                                <div id="image01" class="image">
+                                    <span class="frame"><img src="assets/images/image01.jpg" alt="" /></span>
+                                </div>
+                                <p id="text13">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod</p>
+                                <p id="text14"><span>John Doe</span><br /><span>NYC, USA</span><br /><span>⭐️⭐️⭐️⭐️⭐️</span></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="container14" class="style1 container default">
+                        <div class="wrapper">
+                            <div class="inner">
+                                <div id="image13" class="image">
+                                    <span class="frame"><img src="assets/images/image13.jpg" alt="" /></span>
+                                </div>
+                                <p id="text45">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod</p>
+                                <p id="text46"><span>Jane Doe</span><br /><span>NYC, USA</span><br /><span>⭐️⭐️⭐️⭐️⭐️</span></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="embed02">
+                    </div>
+                </div>
+                <div id="container12" class="container default full screen">
+                    <div class="wrapper">
+                        <div class="inner">
+                            <h3 id="text30">UPDATED</h3>
+                            <h3 id="text06">Table of Contents</h3>
+                            <p id="text23">Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
+                        </div>
+                    </div>
+                </div>
+                <div id="container11" class="container columns full screen">
+                    <div class="wrapper">
+                        <div class="inner">
+                            <span></span>
+                            <div class="after-spacer">
+                                <p id="text52"><strong>Section one - Learning</strong></p>
+                                <div id="table" class="table-wrapper">
+                                    <div class="table-inner">
+                                        <table>
+                                            <tbody>
+                                                <tr>
+                                                    <td><strong>01.</strong> Chapter one</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><strong>02.</strong> Chapter two</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><strong>03.</strong> Chapter three</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><strong>04.</strong> Chapter four <span style="color: #49B970">updated</span></td>
+                                                </tr>
+                                                <tr>
+                                                    <td><strong>05.</strong> Chapter five</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><strong>06.</strong> Chapter six</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><strong>07.</strong> Extra Chapter</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><strong>08.</strong> Bonus Material <span style="color: #49B970">new</span></td>
+                                                </tr>
+                                                <tr>
+                                                    <td><strong>09.</strong> Notes</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="before-spacer">
+                                <p id="text39"><strong>Section Two - Building</strong></p>
+                                <div id="table" class="table-wrapper">
+                                    <div class="table-inner">
+                                        <table>
+                                            <tbody>
+                                                <tr>
+                                                    <td><strong>01.</strong> Chapter one <span style="color: #49B970">new</span></td>
+                                                </tr>
+                                                <tr>
+                                                    <td><strong>02.</strong> Chapter two</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><strong>03.</strong> Chapter three</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><strong>04.</strong> Chapter four</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                            <span></span>
+                        </div>
+                    </div>
+                </div>
+                <div id="container06" data-scroll-id="packages" data-scroll-behavior="default" data-scroll-offset="0" class="container default full screen">
+                    <div class="wrapper">
+                        <div class="inner">
+                            <h3 id="text29">PACKAGES</h3>
+                            <h3 id="text03">Get the book</h3>
+                            <h1 id="text17">Choose the package that fits your needs</h1>
+                        </div>
+                    </div>
+                </div>
+                <div id="container09" class="style2 container columns">
+                    <div class="wrapper">
+                        <div class="inner">
+                            <div>
+                                <p id="text24">SOFT COPY</p>
+                                <p id="text27">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod</p>
+                                <p id="text31"><mark>✓</mark> LOREM IPSUM</p>
+                                <p id="text32"><mark>✓</mark> LOREM IPSUM</p>
+                                <p id="text33"><mark>✓</mark> LOREM IPSUM</p>
+                            </div>
+                            <div>
+                                <h1 id="text34">$15<mark>USD</mark></h1>
+                                <p id="text51"><span>Lorem ipsum dolor sit amet,</span><br /><span>consectetur adipiscing elit.</span></p>
+                                <ul id="buttons01" class="style1 buttons">
+                                    <li>
+                                        <a href="https://domain.ext/path" class="button n01">Buy now</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="container05" class="style2 container columns">
+                    <div class="wrapper">
+                        <div class="inner">
+                            <div>
+                                <p id="text47">hard copy</p>
+                                <p id="text48">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod</p>
+                                <p id="text49"><mark>✓</mark> LOREM IPSUM</p>
+                                <p id="text50"><mark>✓</mark> LOREM IPSUM</p>
+                                <p id="text37"><mark>✓</mark> LOREM IPSUM</p>
+                            </div>
+                            <div>
+                                <h1 id="text36">$25<mark>USD</mark></h1>
+                                <p id="text35"><span>Lorem ipsum dolor sit amet,</span><br /><span>consectetur adipiscing elit.</span></p>
+                                <ul id="buttons09" class="style1 buttons">
+                                    <li>
+                                        <a href="https://domain.ext/path" class="button n01">Buy now</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="container10" class="container default full screen">
+                    <div class="wrapper">
+                        <div class="inner">
+                            <h3 id="text07">WHO DID THIS</h3>
+                            <h3 id="text10">About the author</h3>
+                            <h1 id="text02">Lorem ipsum dolor sit amet, consectetur adipiscing elit</h1>
+                        </div>
+                    </div>
+                </div>
+                <div id="container07" class="container columns">
+                    <div class="wrapper">
+                        <div class="inner">
+                            <div>
+                                <div id="image05" class="style2 image" data-position="left">
+                                    <span class="frame deferred"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHg9IjAiIHk9IjAiIHZpZXdCb3g9IjAgMCAxMjgwIDE5MjAiIHdpZHRoPSIxMjgwIiBoZWlnaHQ9IjE5MjAiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiPjxyZWN0IGZpbGw9IiMyNTFlMWEiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiLz48L3N2Zz4%3D" data-src="assets/images/image05.jpg" alt="" /></span>
+                                </div>
+                            </div>
+                            <div>
+                                <p id="text21"><strong>Who is behind this?</strong></p>
+                                <p id="text20"><span>Torquent per conubia nostra, per inceptos himenaeos.</span><br /><span>Mauris in erat justo. Nullam ac urna eu felis dapibus condimentum sit amet a augue.</span><br /><span>Sed non neque elit. Sed ut imperdiet nisi.</span><br /><span>Proin condimentum fermentum nunc,</span><br /><span>etiam pharetra, erat sed fermentum feugiat.</span></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="container17" class="container default full screen">
+                    <div class="wrapper">
+                        <div class="inner">
+                            <h3 id="text18">KNOW THE REST</h3>
+                            <h3 id="text19">Frequently Asked Questions</h3>
+                            <h1 id="text43">Lorem ipsum dolor sit amet, consectetur adipiscing elit</h1>
+                        </div>
+                    </div>
+                </div>
+                <div id="container19" class="container default">
+                    <div class="wrapper">
+                        <div class="inner">
+                            <p id="text28" class="style1">What&#39;s a question?</p>
+                            <h1 id="text44"><span>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</span><br /><span>incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis</span><br /><span>nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</span></h1>
+                            <h1 id="text42"><span>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu</span><br /><span>fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in</span><br /><span>culpa qui officia deserunt mollit anim id est laborum.</span></h1>
+                            <p id="text40" class="style1">Second question?</p>
+                            <h1 id="text25"><span>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu</span><br /><span>fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in</span><br /><span>culpa qui officia deserunt mollit anim id est laborum.</span></h1>
+                            <p id="text26" class="style1">Next question?</p>
+                            <h1 id="text41"><span>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</span><br /><span>incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis</span><br /><span>nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</span></h1>
+                        </div>
+                    </div>
+                </div>
+                <div id="container03" class="container default full screen">
+                    <div class="wrapper">
+                        <div class="inner">
+                        </div>
+                    </div>
+                </div>
+                <div id="container18" class="container columns full screen">
+                    <div class="wrapper">
+                        <div class="inner">
+                            <div>
+                                <p id="text22">Made by <a href="https://nerdbasis.net/">Nerd Basis</a> buy  <a href="https://carrd.co/buy/07d7ca1510c85479">Carrd version</a></p>
+                            </div>
+                            <div>
+                                <ul id="icons01" class="icons">
+                                    <li>
+                                        <a href="https://domain.ext/path">
+                                            <i class="fa fa-envelope" style="font-size:26px;color:#49b970; "></i>
+
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="n02" href="https://domain.ext/path">
+                                            <i class="fa fa-youtube" style="font-size:26px;color:#49b970; "></i>
+
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="n03" href="https://domain.ext/path">
+                                            <i class="fa fa-facebook-f" style="font-size:26px;color:#49b970; "></i>
+
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="n04" href="https://domain.ext/path">
+                                            <i class="fa fa-twitter" style="font-size:26px;color:#49b970; "></i>
+
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="assets/main.js"></script>
+</body>
+
+</html>
