@@ -1,6 +1,6 @@
 # [HTML5 Ebook Pro Template](https://nerdbasis.net/ )
 
-HTML5 Ebook Pro Template is a professional front-end template for building fast, robust, and adaptable weesite for book author.
+HTML5 Ebook Pro Template is a professional front-end template for building fast, robust, and adaptable website for book author.
 
 
 ![Ebook pro template](https://user-images.githubusercontent.com/102594663/160638918-51ee5d12-3fd6-49c1-9727-27c9a972c7a7.png)
